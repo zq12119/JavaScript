@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 命名函数
+    sum();
+    function sum(){
+        alert(3);
+    }
+    // 匿名函数
+    // var a=function(){
+    // console.log("a");
+    // }
+    // a();
+    // 命名函数和匿名函数调用的区别
+
+    // 参数
+    function suma(){
+        var s=0;
+        for(var i=0;i<arguments.length;i++){
+            s+=arguments[i];
+        }
+        return s;
+    }
+    var res=suma(3,4,5,6,7,8);
+    console.log(res);
+    
+    // 函数返回值：return
+    function test(n){
+        if(n==2){
+            return n;
+        }
+        return "n不等于2";
+    }
+
+    function test3(a,b,c){
+        alert(a+b);//答案是7
+        alert(a+b+c);//答案是NaN
+    }
+    test3(3,4);//传两个参数并不会报错
+
+    //1个入参
+    var fn1=x=>x+2;//x为入参，x+2为函数体
+    console.log(fn1(4));//输出结果为6
+
+    //两个入参，要用括号
+    var fn2=(x,y)=>x+y;//x,y为入参，x+y为函数体
+    console.log(fn2(1,2));//输出结果为3
+
+    //闭包函数
+    function foo(x){
+        alert(1);
+        var tmp=3;
+        bar=function(y){
+            alert(3);
+            return (x+y(++tmp));//2+10+4=16  //2+10+5=17
+        }
+    }
+    // console.log(foo(2));//输出为undefined
+    // console.log(bar(10));//输出为16
+    // console.log(bar(10));//输出为17
+
+    // var b=function(){
+    //     console.log(4);
+    // }()这个和下面的函数只能出现一个
+
+    (function(){
+        alert(5);
+    }())
+</script>
+</body>
+</html>

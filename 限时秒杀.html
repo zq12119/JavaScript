@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .box{      
+            position: relative;
+            width: 702px;
+            height: 250px;
+            background: url(img/timg.jpg);
+            margin: 0 auto;
+        }
+        .box div{  
+            width: 50px; 
+            height: 50px;
+            border: 1px solid darkgray;
+            position: relative;
+            top: 260px;          
+            float: left;      
+            left:305px ;       
+            margin-left: 5px;   
+            color: red;        
+            text-align: center;   
+            line-height: 50px;    
+        }
+        span{
+            color:red;
+            position:absolute;
+            bottom: -50px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+      <div class="box">
+         <span>距离本场秒杀结束还剩：</span>
+        <div id="d"></div>
+        <div id="h"></div>
+        <div id="m"></div>
+        <div id="s"></div>
+    </div>
+</body>
+<script type="text/javascript">  
+var endTime = new Date("2019-12-10 18:00:00");
+var endSeconds = endTime.getTime();
+var d = h = m = s =  0;
+var timer = setInterval(qiang,1000);
+function qiang(){
+    var nowTime = new Date();
+    var remain = parseInt((endSeconds-nowTime.getTime())/1000);
+    if(remain>0){
+        d = parseInt(remain/86400);
+        h = parseInt((remain/3600) % 24);
+        m = parseInt((remain/60) % 60);
+        s = parseInt((remain) % 60);
+        d= d < 10 ? '0' + d:d;
+        h= h < 10 ? '0' + h:h;
+        m= m < 10 ? '0' + m:m;
+        s= s < 10 ? '0' + s:s;
+    }else{
+        clearInterval(timer);
+        d = h = m = s = '00' ;
+    }
+    document.getElementById("d").innerHTML = d + '天';
+    document.getElementById("h").innerHTML = h + '时';
+    document.getElementById("m").innerHTML = m + '分';
+    document.getElementById("s").innerHTML = s + '秒';
+}
+</script>
+</body>
+</html>

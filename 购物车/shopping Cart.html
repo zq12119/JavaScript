@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table {
+            display: block;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        #box {
+            width: 900px;
+        }
+
+        #cart {
+            float: left;
+            border-collapse: collapse;
+        }
+
+        #head {
+            background: #f0ffff;
+        }
+
+        #settlement {
+            margin-top: 20px;
+            width: 805px;
+            height: 30px;
+            border: 1px solid #ebebeb;
+            float: left;
+            background: #ebebeb;
+
+            font-size: 10px;
+            line-height: 30px;
+        }
+
+        #settlement div {
+            float: left;
+        }
+
+        #addupto {
+            color: #ff0000;
+            font-weight: 700;
+        }
+
+        #NumofGoods {
+            color: #ff0000;
+            font-weight: 700;
+        }
+
+        .goods {
+            padding: 5px;
+            text-align: left;
+        }
+
+        .number {
+            position: relative;
+            left: 19px;
+            width: 60px;
+            height: 10px;
+            border: 1px solid #cccccc;
+        }
+
+        .acc {
+            width: 40px;
+            height: 10px;
+            border-left: 0px solid #cccccc;
+            border-right: 0px solid #cccccc;
+            line-height: 10px;
+            float: left;
+        }
+
+        .desymbol {
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+            background: #ccc;
+            float: left;
+            cursor: pointer;
+        }
+
+        .adsymbol {
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+            background: #ccc;
+            float: right;
+            cursor: pointer;
+        }
+
+        /*.dele{
+        cursor: pointer;
+    }*/
+        .total {
+            color: #ff0000;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <table id="cart">
+            <tr id="head">
+                <td width="50px">全选</td>
+                <td width="400px">商品</td>
+                <td width="100px">单价</td>
+                <td width="100px">数量</td>
+                <td width="100px">小计</td>
+                <td width="50px">操作</td>
+            </tr>
+            <tr>
+                <td><input class="select" type="checkbox"></td>
+                <td class="goods">JavaScript实践</td>
+                <td class="price">45.80</td>
+                <td>
+                    <div class="number">
+                        <div class="desymbol">-</div>
+                        <div class="acc">1</div>
+                        <div class="adsymbol">+</div>
+                    </div>
+                </td>
+                <td class="total"></td>
+                <td class="dele">删除</td>
+            </tr>
+            <tr>
+                <td><input class="select" type="checkbox"></td>
+                <td class="goods">PHP基础案例教程</td>
+                <td class="price">49.80</td>
+                <td>
+                    <div class="number">
+                        <div class="desymbol">-</div>
+                        <div class="acc">1</div>
+                        <div class="adsymbol">+</div>
+                    </div>
+                </td>
+                <td class="total"></td>
+                <td class="dele">删除</td>
+            </tr>
+            <tr>
+                <td><input class="select" type="checkbox"></td>
+                <td class="goods">HTML+CSS网页制作</td>
+                <td class="price">45.20</td>
+                <td>
+                    <div class="number">
+                        <div class="desymbol">-</div>
+                        <div class="acc">1</div>
+                        <div class="adsymbol">+</div>
+                    </div>
+                </td>
+                <td class="total"></td>
+                <td class="dele">删除</td>
+            </tr>
+            <tr>
+                <td><input class="select" type="checkbox"></td>
+                <td class="goods">Java基础入门</td>
+                <td class="price">45.00</td>
+                <td>
+                    <div class="number">
+                        <div class="desymbol">-</div>
+                        <div class="acc">1</div>
+                        <div class="adsymbol">+</div>
+                    </div>
+                </td>
+                <td class="total"></td>
+                <td class="dele">删除</td>
+            </tr>
+        </table>
+        <div id="settlement">
+            <div style="width: 550px;"><input class="allSelect" type="checkbox">全选</div>
+            <div style="width: 120px;">全选商品<span id="NumofGoods"></span><span>件</span></div>
+            <div style="width: 80px;">合计:￥<span id="addupto"></span></div>
+            <div style="width:50px;text-align: center;border-left: 1px solid #00ff00; background: chocolate;">提交订单</div>
+        </div>
+    </div>
+</body>
+
+</html>

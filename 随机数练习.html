@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var srr="abcdefjhijklmnopqrstuvwxyz";
+        var tr=srr.toUpperCase();
+        var a="0123456789";
+        var b=srr.concat(tr,a);
+
+    function randomWord(){
+        var str = "",arr=b.split(""),s="";
+        for(var i=0; i<4; i++){
+        pos = Math.round(Math.random() * (arr.length-1));
+        str += arr[pos];
+        }
+        document.getElementById("demo").innerHTML=str;
+    }
+    </script>
+    <p id="demo"></p>
+    <input type="button" value="刷新" onclick="randomWord()">
+</body>
+</html>

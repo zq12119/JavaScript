@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var area = 'Beijing';
+        function getArea(){
+            return this.area;
+        }
+        console.log(area);
+        console.log(window.area);
+        console.log(getArea());
+        console.log(window.getArea());
+        console.log(window.Number(area));
+    </script>
+</body>
+</html>

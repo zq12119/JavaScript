@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+</head>
+<body>
+    用户名：<input type="text" id="name" />
+    密码：<input type="text" id="password" />
+    <input type="button" value="验证" onclick="login()"/>
+</body>
+<script>
+    function login(){
+        var name = document.getElementById('name').value;
+        var password = document.getElementById('password').value;
+        if(password!='123'){
+            alert("密码输入错误");
+        }else{
+            alert("密码正确");
+        }   
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		年份:<input type="text" id="year" />
+		月份:<input type="text" id="month" />
+
+		<button onclick="test(year.value,month.value)">查询</button>
+
+        <script type="text/javascript">
+            var td1 = /^\d{4}$/;
+            var td2 = /^((0?[1-9])|(1[012]))$/;
+			function test(year, month) {
+				if (year == "" || month == "") {
+					alert("请输入年月");
+				} else if (!td1.test(year)) {
+					alert("请输入有效年份");
+				}else if(!td2.test(month)){
+					alert("请输入有效月份");
+				}else{
+					alert("通过");
+				}
+			}
+		</script>
+	</body>
+</html>

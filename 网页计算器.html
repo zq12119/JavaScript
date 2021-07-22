@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页计算器</title>
+</head>
+<body>
+    <p>整数1：<input id="number" type="text"></p>
+    <p>整数2：<input id="number1" type="text"></p>
+    <p>
+        <input type="button" value="加" onclick="deal('add')">
+        <input type="button" value="减" onclick="deal('jia')">
+        <input type="button" value="乘" onclick="deal('chen')">
+        <input type="button" value="除" onclick="deal('chu')">
+    </p>
+    <p>结果：<input id="result"" type="text"></p>
+    <script>
+        function deal(num){
+            var num1=document.getElementById('number').value;
+            var num2=document.getElementById('number1').value;
+            if(isNaN(num1)&&isNaN(num2)){
+                alert("输入的数字必须是纯数字！");
+            }else{
+                var str1=parseInt(num1);
+                var str2=parseInt(num2);
+                switch(num){
+                    case'add':
+                    document.getElementById('result').value=str1+str2;
+                    break;
+                    case'jia':
+                    document.getElementById('result').value=str1-str2;
+                    break;
+                    case'chen':
+                    document.getElementById('result').value=str1*str2;
+                    break;
+                    case'chu':
+                    document.getElementById('result').value=str1/str2;
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>大小写转换</h3>
+    <p>原数据：<input type="text" id="old"></p>
+    <p>操作：<input type="button" value="转大写" onclick="check()">
+    <input type="button"value="转小写" onclick="check1()"></p>
+    <p>新数据：<input type="text" id="new"></p>
+
+    <script>
+        function check(){
+            var old=document.getElementById("old").value;
+            var news=old.toUpperCase();
+           document.getElementById("new").value=news;
+        }
+        function check1(){
+            var old=document.getElementById("old").value;
+            var news=old.toLowerCase();
+            document.getElementById("new").value=news;
+        }
+    </script>
+</body>
+</html>

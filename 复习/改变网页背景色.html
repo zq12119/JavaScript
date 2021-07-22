@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>改变网页背景色</title>
+</head>
+<body>
+    <input type="button" value="改为红色" onclick="changColor('red')"/>
+    <input type="button" value="改为黄色" onclick="changColor('yellow')"/>
+    <input type="button" value="改为蓝色" onclick="changColor('blue')"/>
+    <input type="button" value="改为自定义颜色" onclick="changColor('#c1c1c1')"/>
+</body>
+<script>
+    function changColor(color){
+        document.body.style.background=color;
+    }
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三级联动下拉列表</title>
+</head>
+
+<body>
+    <form>
+        <select id="province">
+            <option>
+                请选择所在省份
+            </option>
+        </select>
+        <select id="city">
+            <option>
+                请选择所在城市
+            </option>
+        </select>
+        <select id="county">
+            <option>
+                请选择所在县或区
+            </option>
+        </select>
+    </form>
+</body>
+<script>
+    //定义省份，城市，县级
+    var arr_province=["江苏省","福州省","广东省","甘肃省"];
+    var arr_city=[["南京","苏州","南通","常州"],["福州","福安","龙岩","南平"],["广州","潮阳","潮州","汕头"],["兰州","白银","定西","敦煌"]];
+    var arr_county=[[["玄武区","秦淮区","栖霞区","浦口区"],["姑苏区","虎丘区","吴中区","吴江区"],["崇川区","通州区","启东区","如东县"],["金坛区","天宁区","钟楼区","新北区"]],
+    [["鼓楼区","台江区","苍山区","马尾区"],["朝阳老城区","溪北新城区","滨海城区","白马港城区"],["新罗区","永定区","长汀县","上杭县"],["延平区","建阳区","邵武市","武夷山市"]],
+    [["越秀区","荔湾区","天河区","白云区"],["棉城街道","河溪镇 ","西胪镇","关埠镇"],["湘桥区","潮安区","饶平县","枫溪区"],["金平区","龙湖区","濠江区","南澳县"]],
+    [["永登县","榆中县","皋兰县"],["景泰县","靖远县","会宁县","平川区"],["通渭县","陇西县","渭源县","临洮县"],["沙州镇","肃州镇","莫高镇","七里镇"]]];
+    var province=document.getElementById("province");
+    var city=document.getElementById("city");
+    var county=document.getElementById("county");
+
+    //所选省份的默认索引
+    var ProvinIndex=-1;
+
+    //填入所选省份选项的内容
+    for(var i=0;i<arr_province.length;i++){
+        province.options.add(new Option(arr_province[i]));
+    }
+
+    province.onchange=function getCity(){
+        //每次选择省份先清空城市和县的列表
+        city.options.length=1;
+        county.options.length=1;
+        //获取所选省份的索引
+        ProvinIndex=this.selectedIndex-1;
+        //如果所选省份的索引不是0(默认选项)，则填入对应城市的内容
+        if(ProvinIndex>-1){
+            //填入所选城市的内容
+            for(var i=0;i<arr_city[ProvinIndex].length;i++){
+                city.options.add(new Option(arr_city[ProvinIndex][i]))
+            }
+        }
+    }
+    city.onchange=function getCounty(){
+        //每次选择城市要清空县的列表
+        county.options.length=1;
+        //获取所选城市的索引
+        var cityIndex=this.selectedIndex-1;
+        //如果所选城市的索引不是默认值(0),则填入对应县的内容
+        if(cityIndex>-1){
+            //填入所选县的内容
+            for(var i=0;i<arr_county[ProvinIndex][cityIndex].length;i++){
+                county.options.add(new Option(arr_county[ProvinIndex][cityIndex][i]))
+            }
+            
+        }
+    }
+</script>
+</html>

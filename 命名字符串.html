@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arrl = new Array(1,2,3);
+        // alert(arrl.length);
+        // var arr2 = [1,2,3];
+        // var arr=[2,3,4,5,6,7,8];
+        // var sum=0;
+        // for(var i=0;i<arr.length;i++){
+        //     sum+=arr[i];
+        // }
+        // document.write(sum);
+        // var arr3=[4,5,10,6,7,8];
+        // var res=arr3.splice(1,2,"yan","aa","44");
+        // console.log(res);
+        // console.log(arr3);
+        var arr=['sky','wind','snow','sun'];
+        arr.splice(2,2);
+        alert(arr);
+        arr.splice(1,1,"snow");
+        alert(arr);
+        arr.splice(4,0,'hail','sun');
+        alert(arr);
+        arr.splice(3,0,['lala','yaya'],null,undefined,[]);
+        alert(arr);
+    </script>
+</body>
+</html>

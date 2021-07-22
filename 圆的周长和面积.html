@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算圆的周长和面积</title>
+</head>
+<body>
+    <div>
+        <p>圆的半径：<input id="r" type="text"></p><br/>
+        <p>圆的周长：<input id="cir" type="text"></p><br/>
+        <p>圆的面积：<input id="area" type="text"></p><br/>
+    </div>
+    <script>
+        var r = prompt("请输入圆的半径");
+        r=parseFloat(r)&&Number(r);
+        if(isNaN(r)){
+            alert("请输入正确的数值！");
+        }else{
+            document.getElementById("r").value=r;
+            document.getElementById("cir").value=2*r*Math.PI;
+            document.getElementById("area").value=Math.Pi*r*r;
+        }
+    </script>    
+</body>
+</html>

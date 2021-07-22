@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页警告框</title>
+</head>
+<body>
+    <script>
+        function showEnter(){
+            alert("欢迎进入本网页");
+        }
+        function showLeave(){
+            alert("欢迎下次光临");
+        }
+        window.onload=showEnter;
+        window.onbeforeunload=showLeave;
+    </script>
+</body>
+</html>

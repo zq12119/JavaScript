@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var r = prompt("请输入猴子的总数：");
+        var s =prompt("请输入踢出的猴子的位置：")
+        var arr=[];
+        r=parseFloat(r)&&Number(r);
+        s=parseFloat(s)&&Number(s);
+        if(isNaN(r)&&isNaN(s)){
+            alert("输入的数字必须是纯数字！");
+        }
+        for(var i=0;i<r;i++){
+           arr.splice(r,0,i+1);
+        }
+        console.log(arr);
+        while(arr.length>1){
+            for(var j=1;j<arr.length+1;j++){
+                if(j%s==0){
+                     arr.splice(j-1,1);
+                }
+             }
+        }
+        document.write(arr);
+    </script>
+</body>
+</html>
